@@ -1,3 +1,20 @@
+## Seputar Program
+
+Ini adalah program yang saya buat disela-sela hari libur saya di perkuliahan, mungkin ini bukan program web yang bagus, tapi saya akan berusaha sebaik mungkin untuk mengupdate program ini.
+
+Seperti yang saya sebutkan pada deskripsi progeam ini, anda bisa menggunakan program ini dengan bebas, tapi saya melarang keras anda untuk mengubah footer atau bahkan memperjual-belikannya.
+
+Pada program ini, saya menggunakan Laravel versi 9, php versi 8.1.6 serta Tailwind sebagai CSS engine-nya.
+
+## Cara Pengoperasian
+
+1. clone repositori ini atau anda bisa mendownloadnya langsung
+2. jika anda mendownloadnya, ekstrak file tersebut, kemudian masuk ke dalam folernya
+3. Setelah anda masuk ke dalam folder, silahkan tekan shift + klik kanan > pilih Open PowerShell Windows Here
+4. Buka 2 PowerShell, pada masing-masing window, silakan ketik comman "npm run dev" dan "php artisan serve"
+5. buka folder program di teks editor kesayangan anda, kemudian lakukan konfigurasi yang diperlukan, seperti menyesuaikan nama database dan lain-lain.
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
