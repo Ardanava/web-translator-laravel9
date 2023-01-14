@@ -56,7 +56,12 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            
+            @if (isset(Auth::user()->name))
+                @include('layouts.navigation')
+            @else
+                @include('layouts.navigationuser')
+            @endif
 
             <!-- Page Heading -->
             @if (isset($header))

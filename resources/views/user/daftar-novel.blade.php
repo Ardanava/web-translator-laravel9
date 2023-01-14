@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Daftar Novel') }}
         </h2>
     </x-slot>
  
@@ -13,7 +13,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
                         {{-- Awal card yang di-loop --}}
                         <div class="relative mx-auto w-full">
-                            <a href="detail-posting" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
+                            <a href="info-novel" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                                 <div class="shadow p-4 rounded-lg bg-white">
                                     <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
                                         <div class="p-1 rounded max-w-sm">
@@ -35,7 +35,7 @@
                         </div>
                         {{-- Akhir Looping --}}
                         <div class="relative mx-auto w-full">
-                            <a href="detail-posting" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
+                            <a href="info-novel" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                                 <div class="shadow p-4 rounded-lg bg-white">
                                     <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
                                         <div class="p-1 rounded max-w-sm">
@@ -56,7 +56,7 @@
                             </a>
                         </div>
                         <div class="relative mx-auto w-full">
-                            <a href="detail-posting" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
+                            <a href="info-novel" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                                 <div class="shadow p-4 rounded-lg bg-white">
                                     <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
                                         <div class="p-1 rounded max-w-sm">
@@ -77,7 +77,7 @@
                             </a>
                         </div>
                         <div class="relative mx-auto w-full">
-                            <a href="detail-posting" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
+                            <a href="info-novel" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                                 <div class="shadow p-4 rounded-lg bg-white">
                                     <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
                                         <div class="p-1 rounded max-w-sm">
@@ -98,7 +98,7 @@
                             </a>
                         </div>
                         <div class="relative mx-auto w-full">
-                            <a href="detail-posting" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
+                            <a href="info-novel" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                                 <div class="shadow p-4 rounded-lg bg-white">
                                     <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
                                         <div class="p-1 rounded max-w-sm">

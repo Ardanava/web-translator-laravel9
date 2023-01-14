@@ -11,6 +11,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/detail-posting', function () {
+    return view('posting/detail-posting');
+})->middleware(['auth', 'verified'])->name('posting/detail-posting');
+
 Route::get('/list', function () {
     return view('list-novel/list');
 })->middleware(['auth', 'verified'])->name('list');
@@ -36,5 +40,23 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Route User
+
+Route::get('', function () {
+    return view('user/dashboard');
+})->name('');
+
+Route::get('daftar-novel', function () {
+    return view('user/daftar-novel');
+})->name('/daftar-novel');
+
+Route::get('detail-postingan', function () {
+    return view('user/detail-posting');
+})->name('/detail-postingan');
+
+Route::get('info-novel', function () {
+    return view('user/detail-novel');
+})->name('/info-novel');
 
 require __DIR__.'/auth.php';
