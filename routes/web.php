@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\NovelController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', function () {
@@ -15,10 +16,6 @@ Route::get('/detail-posting', function () {
     return view('posting/detail-posting');
 })->middleware(['auth', 'verified'])->name('posting/detail-posting');
 
-Route::get('/list', function () {
-    return view('list-novel/list');
-})->middleware(['auth', 'verified'])->name('list');
-
 Route::get('/posting', function () {
     return view('posting/posting');
 })->middleware(['auth', 'verified'])->name('posting');
@@ -27,13 +24,11 @@ Route::get('/tambah-bab', function () {
     return view('novel/tambah-bab');
 })->middleware(['auth', 'verified'])->name('tambah-bab');
 
-Route::get('/tambah-novel', function () {
-    return view('novel/tambah-novel');
-})->middleware(['auth', 'verified'])->name('tambah-novel');
-
 Route::get('/detail-novel', function () {
     return view('novel/detail');
 })->middleware(['auth', 'verified'])->name('detail-novel');
+
+Route::resource('novels', NovelController::class)->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

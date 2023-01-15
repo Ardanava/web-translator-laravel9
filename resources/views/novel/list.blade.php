@@ -13,7 +13,7 @@
                     {{-- Awal Tabel --}}
                     <div class="pb-4 bg-white dark:bg-gray-900">
                         <div class="relative mt-1">
-                            <a href="tambah-novel" class="px-6 py-3 text-white no-underline bg-blue-500 rounded-full hover:bg-blue-600  hover:text-blue-200 focus:shadow-outline ">Tambah Novel</a>
+                            <a href="{{ route('novels.create') }}" class="px-6 py-3 text-white no-underline bg-blue-500 rounded-full hover:bg-blue-600  hover:text-blue-200 focus:shadow-outline ">Tambah Novel</a>
                         </div>
                     </div>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -38,30 +38,32 @@
                                     <th scope="col" class="px-6 py-3">
                                         Aksi
                                     </th>
-                                </tr>
+                                </tr> 
                             </thead>
                             <tbody>
+                                @foreach ($novels as $novel)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Lord of The Mysteries Book 1
+                                        {{ $novel->judul_novel }}
                                     </th>
                                     <td class="px-6 py-4">
-                                        Cuttlefish That Loves Diving
+                                        {{ $novel->penulis }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        Web Novel
+                                        {{ $novel->tipe }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        Tamat
+                                        {{ $novel->status }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        ????
+                                        {{ $novel->created_at }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> | 
+                                        <a href="{{ route('novels.edit', $novel->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> | 
                                         <a href="<?= url('/tambah-bab'); ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Tambah Bab</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
