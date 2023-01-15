@@ -17,10 +17,10 @@
                               <h6 class="text-blueGray-700 text-xl font-bold">
                                 Tambah Novel
                               </h6> 
-                            </div>
+                            </div> 
                           </div>
                           <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                            <form action = "{{ route('novels.store') }}" method = "POST" enctype="multipart/form-data">
+                            <form action = "{{ route('novels.update', $novel->id) }}" method = "POST" enctype="multipart/form-data">
                               @csrf
                               @method('PUT')
                               <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">

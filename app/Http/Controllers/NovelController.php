@@ -92,7 +92,7 @@ class NovelController extends Controller
     
     public function update(Request $request, Novel $novel)
     {
-
+        //validate form
         $this->validate($request, [
             'judul_novel' => 'required',
             'penulis' => 'required|max:255',
@@ -103,22 +103,48 @@ class NovelController extends Controller
             'genre' => 'required',
             'kerjasama' => 'required',
             'sinopsis' => 'required',
-		]); 
-        $input = $request->all();
-  
-        if ($image = $request->file('sampul_novel')) {
-            $destinationPath = 'sampul_novel';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['sampul_novel'] = "$profileImage";
-        }else{
-            unset($input['sampul_novel']);
+        ]);
+
+        //check if image is uploaded
+        if ($request->hasFile('image')) {
+
+            //upload new image
+            $image = $request->file('image');
+            $image->storeAs('public/posts', $image->hashName());
+
+            //delete old image
+            Novel::delete('public/posts/'.$novel->image);
+
+            //update post with new image
+            $novel->update([
+                'judul_novel' => $request->judul_novel,
+                'penulis' => $request->penulis,
+                'penerbit' => $request->penerbit,
+                'tipe' => $request->tipe,
+                'sampul_novel' => $image->hashName(),
+                'status' => $request->status,
+                'genre' => $request->genre,
+                'kerjasama' => $request->kerjasama,
+                'sinopsis' => $request->sinopsis,
+            ]);
+
+        } else {
+
+            //update post without image
+            $novel->update([
+                'judul_novel' => $request->judul_novel,
+                'penulis' => $request->penulis,
+                'penerbit' => $request->penerbit,
+                'tipe' => $request->tipe,
+                'status' => $request->status,
+                'genre' => $request->genre,
+                'kerjasama' => $request->kerjasama,
+                'sinopsis' => $request->sinopsis,
+            ]);
         }
-          
-        $novel->update($input);
-    
-        return redirect()->route('novels.index')
-                        ->with('success','Product updated successfully');
+
+        //redirect to index
+        return redirect()->route('novels.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     // public function destroy(Novel $company)
