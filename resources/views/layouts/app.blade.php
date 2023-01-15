@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Celestial Translation') }}</title>
         <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" />
 
@@ -90,7 +90,7 @@
                 </svg>
             </div>
             <div class="relative text-center text-sm text-slate-600">
-                <p>Copyright © <!-- -->2023<!-- --> Celestial Translation</p>
+                <p>Copyright © <!-- -->2023<!-- --> <a href="https://github.com/Ardanava" class="text-black transition duration-300 ease-in-out" target=”_blank”>Celestial Translation</a></p>
             </div>
         </footer>
     </body>
